@@ -1,0 +1,21 @@
+<div class="mini-container">
+    <div class="bg-login">
+        <div class="logo mx-auto">
+            <img src="https://i.imgur.com/n7RGI6L.png" alt="">
+        </div>
+        <form>
+            <div class="form-row justify-content-center mb-3">
+                <div class="col-12">
+                    <ng-otp-input (keyup.enter)="submit()" class="otp-box" (onInputChange)="onOtpChange($event)"
+                        [config]="{length:4}">
+                    </ng-otp-input>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-7">
+                    <a href="javascript:void(0)" (click)="submit()" class="btn btn-gray d-block">Submit</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

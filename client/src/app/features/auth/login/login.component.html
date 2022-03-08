@@ -1,0 +1,56 @@
+<div class="login-wrapper ">
+  <div class="login-container bg-white">
+    <div class="p-l-50 p-r-50 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+      <p *ngIf="hasErrors" class="text-danger">{{errorMessage}}</p>
+      <h2 class="p-t-25">My Personal Account</h2>
+      <p class="mw-80 m-t-5">Login to Your Account</p>
+      <!-- START Login Form -->
+      <form id="form-login" class="p-t-15" role="form" [formGroup]="loginForm">
+        <!-- START Form Control-->
+        <div class="form-group form-group-default">
+          <label>Email</label>
+          <div class="controls">
+            <input type="text" name="email" placeholder="Email" class="form-control" required formControlName="email">
+          </div>
+        </div>
+        <!-- END Form Control-->
+        <!-- START Form Control-->
+        <div class="form-group form-group-default">
+          <label>Password</label>
+          <div class="controls">
+            <input type="password" class="form-control" name="password" placeholder="Credentials" required
+              formControlName="password">
+          </div>
+        </div>
+        <!-- START Form Control-->
+        <div class="row">
+          <div class="col-md-6 no-padding sm-p-l-10">
+            <div class="form-check">
+              <input type="checkbox" value="1" id="checkbox1">
+              <label for="checkbox1">Remember me</label>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-end">
+            <button aria-label="" class="btn btn-primary btn-lg m-t-10" type="submit" [disabled]="loginForm.invalid"
+              (click)="onSubmit()">Sign in</button>
+          </div>
+        </div>
+        <div>
+          <a href="#" class="normal" routerLink="/auth/signup">Not a member yet? Signup now.</a>
+          <br> <a href="#" class="normal" routerLink="/auth/forget">OOPS? Forget Password</a>
+        </div>
+        <!-- END Form Control-->
+      </form>
+      <!--END Login Form-->
+      <div class="pull-bottom sm-pull-bottom">
+        <div class="m-b-30 p-r-80 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
+          <div class="col-sm-9 no-padding m-t-10">
+            <p class="small-text normal hint-text">
+              ©2019-2020 All Rights Reserved. Pages® is a registered trademark of MPA Ltd. <a href="">Cookie Policy</a>,
+              <a href=""> Privacy and Terms</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+<div class="mini-container">
+    <div class="bg-login">
+        <div class="logo mx-auto">
+            <img src="https://i.imgur.com/n7RGI6L.png" alt="">
+        </div>
+        <div class=" mb-4">
+            <div class="col-11">
+                <label>E-mail</label>
+                <input type="email" (keyup.enter)="submit()" class="" [(ngModel)]="email" placeholder="E-mailadres">
+            </div>
+        </div>
+        <div class="">
+            <div class="col-11">
+                <button [disabled]="!email" (click)="submit()" class="btn btn-gray d-block">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

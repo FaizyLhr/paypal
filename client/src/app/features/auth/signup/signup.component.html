@@ -1,0 +1,52 @@
+<div class="register-container full-height sm-p-t-30">
+  <div class="d-flex justify-content-center flex-column full-height ">
+    <h3>My Personal Account</h3>
+    <div class="small">Open new MPA user account. If you are an existing MPA client, <a href="javascript:void(0)"
+        routerLink="/auth">sign in here</a></div>
+    <form [formGroup]="signupForm" id="form-register" class="p-t-15">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group form-group-default">
+            <label>First Name</label>
+            <input type="text" placeholder="John" class="form-control" required formControlName="firstName">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group form-group-default">
+            <label>Last Names</label>
+            <input type="text" placeholder="Smith" class="form-control" required formControlName="lastName">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group form-group-default">
+            <label>Email</label>
+            <input type="email" placeholder="We will send loging details to you" class="form-control" required
+              formControlName="email">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group form-group-default">
+            <label>Password</label>
+            <input type="password" placeholder="Minimum of 4 Charactors" class="form-control" required
+              formControlName="password">
+          </div>
+        </div>
+      </div>
+      <div class="row m-t-10">
+        <div class="col-lg-6">
+          <p><small>I agree to the <a href="#" class="text-info">Pages Terms</a> and <a href="#"
+                class="text-info">Privacy</a>.</small></p>
+        </div>
+        <div class="col-lg-6 text-right">
+          <a href="#" class="text-info small">Help? Contact Support</a>
+        </div>
+      </div>
+      <p class="fs-20 text-danger" *ngIf="hasErrors">Email or Username already in use.</p>
+      <button aria-label="" class="btn btn-primary btn-cons m-t-10" type="submit" [disabled]="signupForm.invalid"
+        (click)="onSubmit()">Create a new account</button>
+    </form>
+  </div>

@@ -1,0 +1,29 @@
+<div class="mini-container">
+    <div class="bg-login">
+        <div class="logo mx-auto">
+            <img src="https://i.imgur.com/n7RGI6L.png" alt="">
+        </div>
+        <form [formGroup]="resetForm">
+            <div class="form-row mb-3">
+                <div class="col-12 mb-3">
+                    <label class="fs-16 text-blue fw-500">Password</label>
+                    <input type="password" class="form-control" formControlName="password" />
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="col-12 mb-3">
+                    <label class="fs-16 text-blue fw-500">Confirm Password </label>
+                    <input type="password" class="form-control" formControlName="confirmPassword" />
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="col-12">
+                    <button (click)="submit()" focus="!resetForm.invalid" [disabled]="resetForm.invalid"
+                        class="btn btn-gray d-block w-100">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
